@@ -1,0 +1,305 @@
+/* ==========================================================================
+   SR DREAM PREMIUM POS SYSTEM CORE STYLE DESIGN LAYOUT RULES MATRIX
+   ========================================================================== */
+
+:root {
+    --bg-primary: #0f172a;       /* Slate 900 Deep Space */
+    --bg-secondary: #1e293b;     /* Slate 800 Dark Container Panel */
+    --brand-accent: #3b82f6;     /* Vivid Tech Blue */
+    --brand-glow: rgba(59, 130, 246, 0.15);
+    --text-main: #f8fafc;        /* High-contrast off-white text */
+    --text-muted: #94a3b8;       /* Subtle description text */
+    --input-border: #334155;     /* Dark accent borders */
+    --input-focus: #60a5fa;      /* Clean active outline focus tint */
+    --danger-red: #ef4444;       /* Explicit error reporting label */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    background-color: #020617; /* Slate 950 deep dark footer tone */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+/* Flexbox Dual Container Frame Wrapper Layout */
+.pos-login-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-primary);
+}
+
+/* --------------------------------------------------------------------------
+   LEFT SIDEBAR: SPLIT COMPACT PROMOTIONAL BRANDING AREA
+   -------------------------------------------------------------------------- */
+.brand-panel {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem;
+    background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); /* Deep Indigo to Slate tint layout mix */
+    border-right: 1px solid var(--input-border);
+    overflow: hidden;
+}
+
+/* Dynamic abstract ambient layout aesthetic blur ring */
+.brand-panel::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+    top: -50px;
+    left: -50px;
+    pointer-events: none;
+}
+
+.brand-content {
+    position: relative;
+    z-index: 2;
+    margin-auto: auto;
+    margin-top: 20vh;
+}
+
+.brand-logo {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.company-name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.05em;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #ffffff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.system-tagline {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 420px;
+    line-height: 1.6;
+}
+
+.system-pills {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.system-pill {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+    padding: 0.35rem 0.75rem;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.brand-footer {
+    position: relative;
+    z-index: 2;
+    color: #475569;
+    font-size: 11px;
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT SIDEBAR: FORM ENTRY USER MANAGEMENT PORTAL 
+   -------------------------------------------------------------------------- */
+.form-panel {
+    flex: 1.2;
+    background-color: #0b0f19; /* High contrasting obsidian dark core space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 440px;
+}
+
+.form-header {
+    margin-bottom: 2.5rem;
+}
+
+.form-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Inputs Form Elements Blueprint Styling Matrix */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.field-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+}
+
+.input-field-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.field-icon {
+    position: absolute;
+    left: 1rem;
+    color: #475569;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.input-field-wrapper input {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 2.75rem;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--input-border);
+    border-radius: 10px;
+    color: var(--text-main);
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth Focus Glow Rules */
+.input-field-wrapper input:focus {
+    border-color: var(--brand-accent);
+    box-shadow: 0 0 0 4px var(--brand-glow);
+    background-color: var(--bg-primary);
+}
+
+.input-field-wrapper input:focus + .field-icon {
+    color: var(--input-focus);
+}
+
+/* Remember Checkbox Configuration Styling */
+.form-utility {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.remember-me input[type="checkbox"] {
+    accent-color: var(--brand-accent);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.remember-me span {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Action Execution Button Element Styles Rules */
+.btn-pos-submit {
+    width: 100%;
+    padding: 0.95rem;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-pos-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.btn-pos-submit:active {
+    transform: translateY(1px);
+}
+
+/* Alert Error Reporting Output Diagnostics */
+.error-msg {
+    color: var(--danger-red);
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 0.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.auth-status-alert {
+    background-color: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-bottom: 1.5rem;
+}
+.text-warning{color:white}
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN ADAPTATION MEDIA BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .brand-panel {
+        display: none; /* Collapses decorative graphic asset panel entirely on small mobile tablets register terminals */
+    }
+    .form-panel {
+        padding: 2rem;
+    }
+}
