@@ -15,8 +15,8 @@ class AccountGroup extends Model
     protected $fillable = [
         'name', 
         'master_group', 
-        'status',
-       
+  
+      
     ];
 
     /**
