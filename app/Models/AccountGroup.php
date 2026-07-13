@@ -16,7 +16,7 @@ class AccountGroup extends Model
         'name', 
         'master_group', 
         'status',
-        'created_by'
+       
     ];
 
     /**
